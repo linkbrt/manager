@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link href="{% static '/bootstrap/css/bootstrap.css' %}" rel="stylesheet">
+    <script src="{% static '/bootstrap/js/bootstrap.js' %}"></script>
+    <link href="{% static 'assets/education-school-study-sticker-6-svgrepo-com.svg' %}" rel="icon">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar" style="background-color: chocolate;">
+        <div class="container-md text-center">
+            <a class="navbar-brand" href="">
+                <img src="{% static 'assets/education-school-study-sticker-6-svgrepo-com.svg' %}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
+                Органайзер
+            </a>
+        </div>
+    </nav>
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <div class="input-group mb-3">
+                <select class="form-select" id="inputGroupSelect03" onchange="sortItems(this);" aria-label="Example select with button addon">
+                  <option selected>Сортировка по...</option>
+                  <option value="1">Название</option>
+                  <option value="2">Цена</option>
+                  <option value="3">Количество</option>
+                </select>
+            </div>
+        </li>
+        <li class="nav-item">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Возраст от: </span>
+                <input type="text" class="form-control" oninput="filterLowAge(this);" placeholder="Возраст от" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+        </li>
+        <li class="nav-item">
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Цена до: </span>
+                <input type="text" id="price-filter" oninput="filterPrice();" class="form-control" placeholder="Цена" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+        </li>
+      </ul>
+    <!-- <div class="container-sm">
+        <span class="input-group-text" id="basic-addon1">Название</span>
+        <input id="input-toy-name" aria-describedby="basic-addon1" type="text" class="form-control" placeholder="Name" aria-label="Name">
+    </div> -->
+    
+    <div class="container-md text-center">
+        <div class="row row-cols-3">
+            <div class="card add-card" style="width: 18rem; margin: 20px;">
+                <div class="card-body">
+                    <h5 class="card-title">Добавление новой игрушки</h3>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">Название</span>
+                        <input id="input-toy-name" aria-describedby="basic-addon1" type="text" class="form-control" placeholder="Name" aria-label="Name">
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon2">Цена</span>
+                            <input id="input-toy-price" aria-describedby="basic-addon1" type="text" class="form-control" placeholder="Name" aria-label="Name">
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon3">Количество</span>
+                            <input id="input-toy-amount" aria-describedby="basic-addon1" type="text" class="form-control" placeholder="Name" aria-label="Name">
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="basic-addon3">Возраст</span>
+                            <input id="input-toy-age" aria-describedby="basic-addon1" type="text" class="form-control" placeholder="Name" aria-label="Name">
+                        </div>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <button id="btn-add-new-item" disabled type="button" class="btn btn-primary">Добавить</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+</html>
